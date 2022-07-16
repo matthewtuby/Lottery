@@ -11,17 +11,17 @@ TCallable = TypeVar("TCallable", bound=Callable)
 
 config = configparser.ConfigParser()
 config.read("lottery.cfg")
-level = logging.DEBUG
+LEVEL = logging.DEBUG
 if config["DEFAULT"]["logging"] == "INFO":
-    level = logging.INFO
+    LEVEL = logging.INFO
 elif config["DEFAULT"]["logging"] == "WARNING":
-    level = logging.WARNING
+    LEVEL = logging.WARNING
 elif config["DEFAULT"]["logging"] == "ERROR":
-    level = logging.ERROR
+    LEVEL = logging.ERROR
 elif config["DEFAULT"]["logging"] == "CRITICAL":
-    level = logging.CRITICAL
+    LEVEL = logging.CRITICAL
 
-logging.basicConfig(filename="lottery.log", level=level)
+logging.basicConfig(filename="lottery.log", level=LEVEL)
 
 
 def outputless_logger(function: TCallable) -> TCallable:
