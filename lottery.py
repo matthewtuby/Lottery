@@ -52,8 +52,8 @@ class Lottery:
     """Lottery"""
 
     available_tickets: int
-    customers: numpy.ndarray
-    last_customer_id: int
+    __customers: numpy.ndarray
+    __last_customer_id: int
     max_number: int
     number_of_guesses: int
     tickets_sold: int
@@ -87,8 +87,8 @@ class Lottery:
         logging.info("max_number %i", max_number)
         logging.info("ticket_cost %f", ticket_cost)
         self.available_tickets = available_tickets
-        self.customers = numpy.zeros((available_tickets))
-        self.last_customer_id = 0
+        self.__customers = numpy.zeros((available_tickets))
+        self.__last_customer_id = 0
         self.max_number = max_number
         self.number_of_guesses = number_of_guesses
         self.rng = default_rng()
@@ -127,16 +127,16 @@ class Lottery:
         ] = numbers_drawn
         logging.debug("tickets")
         logging.debug(self.tickets)
-        self.customers[
+        self.__customers[
             self.tickets_sold : self.tickets_sold + ticket_amount
-        ] = numpy.full((ticket_amount), self.last_customer_id)
-        logging.debug("customers")
-        logging.debug(self.customers)
+        ] = numpy.full((ticket_amount), self.__last_customer_id)
+        logging.debug("__customers")
+        logging.debug(self.__customers)
         self.tickets_sold += ticket_amount
         logging.debug("tickets_sold %i", self.tickets_sold)
-        logging.debug("last_customer_id %i", self.last_customer_id)
-        self.last_customer_id += 1
-        return self.last_customer_id - 1, numbers_drawn
+        logging.debug("__last_customer_id %i", self.__last_customer_id)
+        self.__last_customer_id += 1
+        return self.__last_customer_id - 1, numbers_drawn
 
     @generic_logger
     def __calculate_prize_won(self, winners: numpy.ndarray) -> None:
@@ -164,9 +164,9 @@ class Lottery:
         logging.debug("worth_of_win")
         logging.debug(worth_of_win)
         self.win_per_customer_id = {}
-        for customer_id in range(self.last_customer_id):
+        for customer_id in range(self.__last_customer_id):
             self.win_per_customer_id[customer_id] = 0
-        for ticket_id, customer in enumerate(self.customers):
+        for ticket_id, customer in enumerate(self.__customers):
             number_of_matches = winners.T[ticket_id]
             customer_id = customer
             self.win_per_customer_id[customer_id] += worth_of_win[number_of_matches]
