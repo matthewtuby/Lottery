@@ -1,8 +1,6 @@
 "Example of lottery usage"
 
-
 from lottery import Lottery
-
 
 if __name__ == "__main__":
     game = Lottery(
