@@ -1,11 +1,10 @@
 # Lottery
+Simple lottery module
 
 ## How to use
 
+todo
+
 ## Requirements
 
-## Dependencies
-
-## rm logs
-
-# static secu check
+see requirements.txt

@@ -1,1 +1,6 @@
-Success: no issues found in 1 source file
+************* Module lottery
+lottery.py:51:0: R0902: Too many instance attributes (11/7) (too-many-instance-attributes)
+
+------------------------------------------------------------------
+Your code has been rated at 9.93/10 (previous run: 9.93/10, +0.00)
+

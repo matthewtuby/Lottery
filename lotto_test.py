@@ -24,8 +24,6 @@ class TestConstructor(unittest.TestCase):
                 ticket_cost=ticket_cost,
             )
             self.assertEqual(game.available_tickets, available_tickets)
-            self.assertEqual(game.customers.shape, (available_tickets,))
-            self.assertEqual(game.last_customer_id, 0)
             self.assertEqual(game.number_of_guesses, number_of_guesses)
             self.assertEqual(game.tickets_sold, 0)
             self.assertEqual(game.tickets.shape, (available_tickets, number_of_guesses))
