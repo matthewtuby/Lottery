@@ -1,3 +1,5 @@
 typing==3.7.4.3
 nptyping==2.2.0
 numpy==1.23.1
+pylint==2.14.4
+mypy==0.961
