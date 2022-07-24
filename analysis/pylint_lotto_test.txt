@@ -1,7 +1,1 @@
-************* Module lotto_test
-lotto_test.py:13:4: E0213: Method should have "self" as first argument (no-self-argument)
-lotto_test.py:39:4: E0213: Method should have "self" as first argument (no-self-argument)
-
-------------------------------------------------------------------
-Your code has been rated at 8.75/10 (previous run: 8.75/10, +0.00)
-
+Success: no issues found in 1 source file

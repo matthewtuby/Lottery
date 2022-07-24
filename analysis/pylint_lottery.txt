@@ -1,11 +1,1 @@
-************* Module lottery
-lottery.py:14:0: C0103: Constant name "level" doesn't conform to UPPER_CASE naming style (invalid-name)
-lottery.py:16:4: C0103: Constant name "level" doesn't conform to UPPER_CASE naming style (invalid-name)
-lottery.py:18:4: C0103: Constant name "level" doesn't conform to UPPER_CASE naming style (invalid-name)
-lottery.py:20:4: C0103: Constant name "level" doesn't conform to UPPER_CASE naming style (invalid-name)
-lottery.py:22:4: C0103: Constant name "level" doesn't conform to UPPER_CASE naming style (invalid-name)
-lottery.py:51:0: R0902: Too many instance attributes (11/7) (too-many-instance-attributes)
-
-------------------------------------------------------------------
-Your code has been rated at 9.56/10 (previous run: 9.56/10, +0.00)
-
+Success: no issues found in 1 source file
